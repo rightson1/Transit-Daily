@@ -16,7 +16,7 @@ const Hero = ({ title }) => {
 
         <Parallax blur={0} bgImage="/image1.jpg" bgImageAlt="the cat" strength={500} >
             <div className="h-[80vh] bg-[rgba(0,0,0,.4)] gap-4 flex justify-center items-center flex-col text-white px-10">
-                <Typography fontFamily="Questrial" variant="h1" className="uppercase"
+                <Typography fontFamily="Questrial" variant="h1" className="uppercase" textAlign="center"
                     fontSize={{
                         xs: '2.5rem',
                         md: '3.5rem'
