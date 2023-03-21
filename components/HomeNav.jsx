@@ -103,11 +103,11 @@ function HomeNav() {
                                         <Button className="text-black"  >
                                             <Typography fontFamily="Questrial"
                                                 sx={{
-                                                    color: item.link.split('/')[1] == path && colors.teal[800] + '!important',
+                                                    color: (item.link.split('/')[1] == path ? colors.teal[500] : 'white') + '!important',
                                                     borderBottom: item.link.split('/')[1] == path && `2px solid ${colors.teal[800]}`,
                                                     "&:hover": {
-                                                        color: colors.teal[800] + '!important',
-                                                        borderBottom: `2px solid ${colors.teal[800]}`,
+                                                        color: colors.teal[500] + '!important',
+                                                        borderBottom: `2px solid ${colors.teal[500]}`,
 
                                                     }
 
