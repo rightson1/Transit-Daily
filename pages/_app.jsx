@@ -14,6 +14,7 @@ import 'react-slideshow-image/dist/styles.css'
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import "swiper/swiper-bundle.css";
 function MyApp(props) {
 
   const clientSideEmotionCache = createEmotionCache();
@@ -33,18 +34,18 @@ function MyApp(props) {
         <AnimatePresence>
           {Component.nolayout ? (<ThemeProvider>
             <div className="w-[100vw] overflow-x-hidden">
-              {/* <Navbar /> */}
+              <Navbar />
               <div className=" ">
                 <Component {...pageProps} />
-                {/* <ScrollToTop smooth color={"#FF6929"} height="15px" className="top" />
-                <TemporaryDrawer /> */}
+                <Sidebar />
               </div>
             </div>
           </ThemeProvider>) : (
             <ThemeProvider>
               <div className="w-[100vw] overflow-x-hidden">
-                <Navbar />
+
                 <div className="">
+                  <Navbar />
                   <Component {...pageProps} />
                   {/* <ScrollToTop smooth color={"#FF6929"} height="15px" className="top" /> */}
                   <Footer />

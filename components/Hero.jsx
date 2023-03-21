@@ -3,8 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Parallax } from 'react-parallax';
 import Typewriter from 'typewriter-effect';
-import { motion } from "framer-motion"
-import { useGlobalProvider } from "../utils/themeContext"
+
 
 const Hero = ({ title }) => {
     return <Box sx={{

@@ -1,12 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Zoom } from 'react-slideshow-image';
+import { Fade } from 'react-slideshow-image';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Link from "next/link";
 import { useGlobalProvider } from "../utils/themeContext";
-import { ZoomOut } from "@mui/icons-material";
 
+import Typewriter from 'typewriter-effect';
+import Navbar from "../components/Navbar";
+import HomeNav from "../components/HomeNav";
 export default function Home() {
-  const { isMobileSmall } = useGlobalProvider()
+  const { isMobileSmall, colors } = useGlobalProvider()
   const list = [
     {
       title: 'About',
@@ -36,55 +38,53 @@ export default function Home() {
 
 
   ]
+  const font = {
+    xs: '3.5rem',
+    md: '5.5rem'
+
+  }
   return (
 
-    <div className="flex  w-full h-screen  ">
+    <div className="flex  w-full h-[85vh]  z-[1]">
+      <HomeNav />
+
       <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
         <div className="flex justify-center items-center">
-          <div className="flex-col flex justify-center items-center  text-white">
-            <Typography fontFamily="Gloria Hallelujah" variant="h1" fontSize={{
-              xs: '2.5rem',
-              md: '7rem'
-            }}>
-              Transit
-            </Typography>
-            <Typography fontFamily='Gloria Hallelujah' variant="h6"
-              fontSize={{
-                xs: '1.5rem',
-                md: '4rem'
-              }}>
-              Daily
-            </Typography>
-          </div>
-          <Box component="img" src="/logo.png" alt="" sx={{
-            width: isMobileSmall ? '150px' : {
-              xs: '200px',
-              md: '400px'
-            }
-          }} />
+          <Typography fontFamily="Questrial" variant="h1" className="font-[900] flex items-center gap-4" textAlign="center"
+          >
+            <div className="flex">
+              <Typography component="span" className="font-[900]" fontSize={font} sx={{
+                color: colors.yellow[500]
+              }}>Trans</Typography>
+              <Typography component="span" className="font-[900]"
+                fontSize={font} sx={{
+                  color: colors.teal[500]
+                }}>it</Typography>
+            </div>
+            <Typography component="span" className="font-[900]"
+              fontSize={font}
+              sx={{
+                color: colors.black[100]
+              }}>  Daily </Typography>
+
+
+          </Typography>
+
         </div>
-        <Typography className="text-white font-semibold" variant="h4" fontFamily="Nunito"
+
+        <Typography className="text-white font-semibold" variant="h4" fontFamily="Nunito" textAlign="center"
           fontSize={{
             xs: '1.5rem',
             md: '2rem'
           }}>
-          VISION, AMBITION & TECHNOLOGY FOR GROUND BREAKING DESIGNS
+          <Typewriter
+            options={{
+              strings: ['Dream in Motion', 'Quality Bikes At Budget Friendly Rates'],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </Typography>
-        <div className="flex  flex-wrap justify-start gap-2 items-center my-2">
-          {
-            list.map(({ title, link }, index) => {
-              return (
-                <Link key={index} href={link}>
-                  <Button className="text-white gap-4 hover:text-teal-500">
-                    {title}
-                    <ArrowRightAltIcon />
-                  </Button>
-                </Link>
-              )
-            })
-          }
-        </div>
-
       </div>
       <div className="fixed top-0 h-screen w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
       <Box
@@ -99,13 +99,13 @@ export default function Home() {
           }
         }}
         className="fixed w-screen h-screen top-0 z-[1]">
-        <Zoom scale={0.4} {...properties}
+        <Fade scale={0.4} {...properties}
           duration={3000}
         >
           {
-            images.map((each, index) => <img key={index} style={{ width: "100%" }} src={each.url} />)
+            images.map((each, index) => <img key={index} style={{ width: "100%" }} src={each.url} className="z-[]" />)
           }
-        </Zoom>
+        </Fade>
       </Box>
     </div>
   );
@@ -122,15 +122,23 @@ const properties = {
 }
 const images = [
   {
-    url: 'image1.jpg',
+    url: 'trek.jpg',
     caption: 'Slide 1'
   },
   {
-    url: 'image3.jpg',
+    url: '/trek/1.png',
     caption: 'Slide 3'
   },
   {
-    url: 'image4.jpg',
+    url: '/trek/2.png',
+    caption: 'Slide 3'
+  },
+  {
+    url: '/trek/3.png',
+    caption: 'Slide 3'
+  },
+  {
+    url: '/trek/4.png',
     caption: 'Slide 3'
   },
 ];

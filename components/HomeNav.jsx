@@ -42,7 +42,7 @@ const nav = [{
     link: '/contact'
 }
 ]
-function Navbar() {
+function HomeNav() {
     const router = useRouter()
     const path = router.pathname.split('/')[1]
     const { colors, setOpen } = useGlobalProvider()
@@ -60,12 +60,12 @@ function Navbar() {
 
                 // bgcolor: colors.primary[500]
             }}
-            className="z-20 bg-white"
+            className="z-20 bg-transparent fixed top-0 left-0 "
         >
             <AppBar position="static" sx={{
                 background: 'inherit',
                 boxShadow: 'none',
-                position: 'relative',
+                position: 'fixed',
                 display: {
                     xs: 'none',
                     md: 'flex'
@@ -175,10 +175,10 @@ function Navbar() {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon className="text-black"
+                            <MenuIcon className=""
                                 onClick={handleOpenNavMenu}
                                 sx={{
-                                    color: colors.grey[100],
+                                    color: colors.grey[900],
                                     fontSize: "2.5rem"
                                 }} />
                         </IconButton>
@@ -187,7 +187,7 @@ function Navbar() {
                 </Container>
             </AppBar>
 
-        </Box >
+        </Box>
     );
 }
-export default Navbar;
+export default HomeNav;
