@@ -163,8 +163,8 @@ function HomeNav() {
                             }}
                         >
                             {/* JLM */}
-                            <img src="/logo.png" className='w-[50px] rounded-full' alt="" />
-                            {/* <img src="/logo.svg" className='w-[40px]' alt="" /> */}
+                            <img src="/logo.png" className='w-[60px] rounded-full' alt="" />
+
                         </Box>
 
                         <IconButton
