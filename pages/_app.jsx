@@ -42,12 +42,11 @@ function MyApp(props) {
             </div>
           </ThemeProvider>) : (
             <ThemeProvider>
-              <div className="w-[100vw] overflow-x-hidden">
+              <div className="w-[100vw] ">
 
                 <div className="">
                   <Navbar />
                   <Component {...pageProps} />
-                  {/* <ScrollToTop smooth color={"#FF6929"} height="15px" className="top" /> */}
                   <Footer />
                   <Sidebar />
                 </div>

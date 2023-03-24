@@ -3,10 +3,9 @@ import { Fade } from 'react-slideshow-image';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Link from "next/link";
 import { useGlobalProvider } from "../utils/themeContext";
-
-import Typewriter from 'typewriter-effect';
-import Navbar from "../components/Navbar";
-import HomeNav from "../components/HomeNav";
+import Typewriter from 'typewriter-effect';;
+import About from "../components/About";
+import Services from "../components/Services";
 export default function Home() {
   const { isMobileSmall, colors } = useGlobalProvider()
   const list = [
@@ -43,10 +42,8 @@ export default function Home() {
     md: '5.5rem'
 
   }
-  return (
-
-    <div className="flex  w-full h-[85vh]  z-[1]">
-      <HomeNav />
+  return (<div className="relative">
+    <div className="flex  w-full h-screen  z-[1]">
 
       <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
         <div className="flex justify-center items-center">
@@ -86,7 +83,7 @@ export default function Home() {
           />
         </Typography>
       </div>
-      <div className="fixed top-0 h-screen w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
+      <div className="absolute top-0 h-screen w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
       <Box
         sx={{
           "& img": {
@@ -98,7 +95,7 @@ export default function Home() {
             bgcolor: 'red'
           }
         }}
-        className="fixed w-screen h-screen top-0 z-[1]">
+        className="absolute w-screen h-screen top-0 z-[1]">
         <Fade scale={0.4} {...properties}
           duration={3000}
         >
@@ -108,6 +105,9 @@ export default function Home() {
         </Fade>
       </Box>
     </div>
+    <About />
+    <Services />
+  </div>
   );
 
 
@@ -142,5 +142,3 @@ const images = [
     caption: 'Slide 3'
   },
 ];
-
-Home.nolayout = true;
