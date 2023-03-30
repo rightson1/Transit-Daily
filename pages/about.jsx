@@ -6,6 +6,8 @@ import { useGlobalProvider } from "../utils/themeContext";
 import Typewriter from 'typewriter-effect';;
 import About from "../components/About";
 import Services from "../components/Services";
+import Gidi from "../components/Gidi";
+import Vision from "../components/Vision";
 export default function Home() {
     const { isMobileSmall, colors } = useGlobalProvider();
     const font = {
@@ -13,8 +15,8 @@ export default function Home() {
         md: '5.5rem'
 
     }
-    return (<div className="relative">
-        <div className="flex  w-full h-screen  z-[1]">
+    return (<div className="relative flex flex-col ">
+        <div className="flex  w-full h-[70vh]  z-[1]">
 
             <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
                 <div className="flex justify-center items-center">
@@ -54,11 +56,11 @@ export default function Home() {
                     />
                 </Typography>
             </div>
-            <div className="absolute top-0 h-screen w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
+            <div className="absolute top-0 h-[70vh] w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
             <Box
                 sx={{
                     "& img": {
-                        height: '100vh',
+                        height: '70vh',
                         objectFit: 'cover',
                     },
                     "& .indicator": {
@@ -66,17 +68,15 @@ export default function Home() {
                         bgcolor: 'red'
                     }
                 }}
-                className="absolute w-screen h-screen top-0 z-[1]">
-                <Fade scale={0.4} {...properties}
-                    duration={3000}
-                >
-                    {
-                        images.map((each, index) => <img key={index} style={{ width: "100%" }} src={each.url} className="z-[]" />)
-                    }
-                </Fade>
+                className="absolute w-screen h-[70vh] top-0 z-[1]">
+                <img style={{ width: "100%" }} src="/gidi.jpg" className="object-contain h-full" />)
+
             </Box>
         </div>
         <About />
+        <Vision />
+
+        <Gidi />
 
     </div>
     );
@@ -97,7 +97,7 @@ const images = [
         caption: 'Slide 1'
     },
     {
-        url: '/gidi.png',
+        url: '/gidi.jpg',
         caption: 'Slide 3'
     },
 

@@ -5,8 +5,8 @@ import Box from "@mui/material/Box"
 
 const About = () => {
     const { colors } = useGlobalProvider()
-    return <div className="h-screen bg-white flex justify-center items-center px-5 py-10  md:px-20 ">
-        <div className="w-full h-full shadow-lg  flex flex-col justify-center items-center p-5 gap-4">
+    return <div className=" min-h-[70vh] flex justify-center items-center px-5 py-10  md:px-20  bg-back bg-primary">
+        <div className="w-full h-full   flex flex-col justify-center items-center p-5 gap-4 shadow-lg">
             <Typography variant="h2" color={colors.grey[500]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
             >   We Offer The Best Services
             </Typography>
