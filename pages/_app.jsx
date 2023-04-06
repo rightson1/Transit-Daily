@@ -13,12 +13,13 @@ import { AnimatePresence } from "framer-motion";
 import 'react-slideshow-image/dist/styles.css'
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer"
 import "swiper/swiper-bundle.css";
 function MyApp(props) {
 
   const clientSideEmotionCache = createEmotionCache();
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
   return (
     <>
       <Head>
@@ -60,6 +61,7 @@ function MyApp(props) {
   );
 
 }
+
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   emotionCache: PropTypes.object,

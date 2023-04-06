@@ -14,10 +14,12 @@ import { ThemeProvider as Theme } from "@mui/material/styles";
 import { CssBaseline, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { AuthProvider } from "./authContext";
+// import { QueryClient, QueryClientProvider } from "react-query";
 const ThemeContext = createContext();
 
 
 export const ThemeProvider = ({ children }) => {
+    // const [queryClient] = useState(() => new QueryClient());
     const router = useRouter()
 
     const initialState = useMemo(() => {
@@ -54,12 +56,15 @@ export const ThemeProvider = ({ children }) => {
 
             }}
         >
+            {/* <QueryClientProvider client={queryClient}> */}
+
             <Theme theme={theme}>
                 <AuthProvider>
                     <CssBaseline />
                     {children}
                 </AuthProvider>
             </Theme>
+            {/* </QueryClientProvider> */}
 
         </ThemeContext.Provider>
     );

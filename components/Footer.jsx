@@ -1,12 +1,14 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-const Footer = () => {
+import { client } from "../utils/client";
+const Footer = ({ footer }) => {
+
     const { colors } = useGlobalProvider()
     const Heading = ({ title }) => (
         <Typography fontFamily="Questrial" variant="h1" className="uppercase"
@@ -51,13 +53,7 @@ const Footer = () => {
                 borderBottom: `1px solid ${colors.teal[100]}`
             }}
             />
-            <Heading title="Kajiado Office" />
-            <Listing text="GF8 Delight Apartments, Diani Rd Off Ole Odume Rd" icon={
-                <LocationOnIcon className="text-white" />
-            } />
-            <Listing text="P.O. Box 18689 Nairobi 00100" icon={
-                <EmailIcon className="text-white" />
-            } />
+
 
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
@@ -85,5 +81,16 @@ const Footer = () => {
         </Grid>
     </Grid>;
 };
+export const getStaticProps = async () => {
+    const response = await client.getEntries({ content_type: 'footer' })
+
+    return {
+        props: {
+            footer: response.items,
+            revalidate: 60
+        }
+    }
+}
+
 
 export default Footer;

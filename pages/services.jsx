@@ -1,17 +1,18 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
-import { Parallax } from 'react-parallax';
-import Typewriter from 'typewriter-effect';
-import { motion } from "framer-motion"
+import React, { useEffect } from "react";
 import { useGlobalProvider } from "../utils/themeContext"
 import Hero from "../components/Hero";
 import Right from "../components/Right";
 import Left from "../components/Left";
-const Services = () => {
+import Slide from "../components/Slide";
+import { client } from "../utils/client"
+const Services = ({ services }) => {
     const { colors } = useGlobalProvider();
-    return <div className="min-h-screen flex flex-col gap-0">
-        <Hero title="Our Services" />
+    return <div className="min-h-screen ">
+        <Slide {...{ services }} />
+
+
         <div className="py-20 flex flex-col justify-center items-center gap-8 px-5 md:px-20">
             <Typography fontFamily="Questrial" variant="h1" className="uppercase"
                 color={colors.teal[500]}
@@ -25,9 +26,31 @@ const Services = () => {
 
 
         </div>
-        <Right />
-        <Left />
+        <div className="flex flex-col pb-[50px] md:pb-0">
+            {
+                services.map((service, index) => {
+                    return (
+                        <Right {...{ service, index }} />
+
+
+                    )
+                })
+            }
+        </div>
     </div>;
 };
+
+
+export const getStaticProps = async () => {
+    const response = await client.getEntries({ content_type: 'services' });
+
+
+    return {
+        props: {
+            services: response?.items || [],
+            revalidate: 60
+        }
+    }
+}
 
 export default Services;

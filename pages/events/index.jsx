@@ -10,7 +10,7 @@ const Event = () => {
     return <div className="min-h-screen ">
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
-            backgroundImage: `url('/9.jpg')`,
+            backgroundImage: `url('/trek/1.png')`,
             backgroundSize: 'cover',
         }}>
             <Typography variant="h2" color={colors.black[900]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
@@ -26,8 +26,8 @@ const Event = () => {
         </Box>
 
         <div className="flex items-center justify-center p-5 md:p-10 flex-col py-10">
-            <Typography variant="h2" className="font-[700] opacity-70 text-center uppercase underline" fontFamily="Questrial"
-            >  Upcomming  Events
+            <Typography variant="h2" className="font-[700]  text-center uppercase underline" fontFamily="Questrial"
+            >  Previus  Events
             </Typography>
             <Grid container spacing={2}>
                 {

@@ -78,7 +78,7 @@ const Blog = () => {
         </div>
 
 
-    </div >;
+    </div>;
 };
 
 export default Blog;

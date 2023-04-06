@@ -19,7 +19,7 @@ const Services = () => {
 
 
             </div>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className="flex justify-center ">
                 {
                     list.map((item, index) => {
                         return <Grid item xs={12} md={6} key={index}>
