@@ -24,7 +24,7 @@ const rows = [
 export default function Rates({ rates }) {
     return (
         <TableContainer component={Paper} className='p-5  p-10'>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Booking (Houres)</TableCell>

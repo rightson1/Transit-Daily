@@ -29,7 +29,7 @@ const Footer = ({ footer }) => {
     )
 
     return <Grid container spacing={5}
-        className="py-20 px-5 md:px-10"
+        className="py-20 px-5 md:px-10  h-[140vh] md:h-[70vh]"
         sx={{
             bgcolor: colors.black[500]
         }}

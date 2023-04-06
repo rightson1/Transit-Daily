@@ -1,6 +1,6 @@
 
 import React from "react";
-import About from "../components/About";
+import BookForm from "../components/Book";
 import { useGlobalProvider } from "../utils/themeContext"
 import Slide from "../components/Slide";
 import Rates from '../components/Rates';
@@ -10,8 +10,6 @@ import Grid from "@mui/material/Grid";
 import { client } from "../utils/client"
 const Book = ({ services, rates, bikes, agreement }) => {
     const { colors } = useGlobalProvider();
-    console.log(agreement)
-
     return <div className="">
         <Slide {...{ services, agreement }} />
         <Typography my={5} variant="h2" color={colors.grey[500]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
@@ -61,6 +59,7 @@ const Book = ({ services, rates, bikes, agreement }) => {
             </Grid>
 
         </div>
+        <BookForm />
     </div>;
 };
 
@@ -83,27 +82,5 @@ export const getStaticProps = async () => {
     }
 }
 
-const blogs = [
-    {
-        name: "How To Fix Tires",
-        img: "/trek/1.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "How to Rent A Bike",
-        img: "/trek/2.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Rongai Picnics",
-        img: "/trek/3.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Cyling Events",
-        img: "/trek/4.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-]
 
 export default Book;

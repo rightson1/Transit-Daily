@@ -48,8 +48,8 @@ function MyApp(props) {
                 <div className="">
                   <Navbar />
                   <Component {...pageProps} />
-                  <Footer />
                   <Sidebar />
+                  <Footer />
                 </div>
               </div>
             </ThemeProvider>
