@@ -30,7 +30,7 @@ const Services = ({ services }) => {
             {
                 services.map((service, index) => {
                     return (
-                        <Right {...{ service, index }} />
+                        <Right {...{ service, index }} key={index} />
 
 
                     )
