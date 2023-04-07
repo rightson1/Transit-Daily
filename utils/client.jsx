@@ -1,7 +1,8 @@
 const contentful = require('contentful')
 export const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    cache: false,
 })
 
 export const previewClient = contentful.createClient({

@@ -90,9 +90,7 @@ export default function Home({ content }) {
 
 
 }
-const buttonStyle = {
-    display: 'none'
-};
+
 export const getStaticProps = async () => {
     const response = await client.getEntries({ content_type: 'aboutUs' });
 
