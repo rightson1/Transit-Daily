@@ -5,6 +5,7 @@ import Typewriter from 'typewriter-effect';;
 import About from "../components/About";
 import Services from "../components/Services";
 import Work from "../components/Work";
+import Title from "../components/Title";
 import { client } from "../utils/client"
 export default function Home({ services, content }) {
   const { colors } = useGlobalProvider();
@@ -17,6 +18,8 @@ export default function Home({ services, content }) {
   }
   return (<div className="relative">
     <div className="flex  w-full h-[60vh] md:h-[80vh]  z-[1]">
+      <Title title="Affordable Bicycle Services and Cycling Events in Nairobi | Transit Daily"
+        description="Transit Daily offers affordable bicycle repair, rental, and cycling events in Nairobi, Kenya. Join us for a fun and eco-friendly way to explore the city on two wheels. Contact us today to learn more!" />
 
       <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
         <div className="flex justify-center items-center">

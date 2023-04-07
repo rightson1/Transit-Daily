@@ -6,13 +6,17 @@ import { useGlobalProvider } from "../../utils/themeContext"
 import { client } from "../../utils/client"
 import PostBody from "../../components/posts/PostBody";
 import { useRouter } from 'next/router'
+import Title from "../../components/Title";
 const Blog = ({ post }) => {
-    const { title, featuredImage: coverImage, author, date, } = post.fields;
+    const { title, featuredImage: coverImage, author, date, excerpt } = post.fields;
     const { url } = coverImage.fields.file;
     const { colors } = useGlobalProvider();
     const router = useRouter();
     return <div className="min-h-screen ">
-
+        <Title
+            title={title}
+            description={excerpt}
+        />
         <Box className="flex justify-center items-center h-[50vh] flex-col" sx={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${url})`,
             backgroundSize: 'cover',

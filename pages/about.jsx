@@ -9,6 +9,7 @@ import Services from "../components/Services";
 import Gidi from "../components/Gidi";
 import { client } from "../utils/client"
 import Vision from "../components/Vision";
+import Title from "../components/Title";
 export default function Home({ content }) {
     const { isMobileSmall, colors } = useGlobalProvider();
     const { autoType, mission, vision, values, title1, title2, title3, paragraph1, paragraph2, paragraph3, featuredImage } = content[0]?.fields;
@@ -19,6 +20,8 @@ export default function Home({ content }) {
     }
     return (<div className="relative flex flex-col  w-screen overflow-x-hidden">
         <div className="flex  w-full h-[60vh] md:h-[70vh]   z-[1] ">
+            <Title title=" Transit Daily | Bicycle Repair, Renting and Cycling Events in Nairobi and Kajiado, Kenya"
+                description="Learn more about Transit Daily, a Nairobi-based startup offering affordable bicycle repair, renting and cycling events. Discover how we are making cycling accessible and enjoyable for everyone" />
 
             <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
                 <div className="flex justify-center items-center">

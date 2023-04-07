@@ -18,7 +18,7 @@ const Vision = ({ mission, vision, values }) => {
             </div>
         </Grid>
         <Grid item xs={12} md={4} className="flex p-4 gap-4 flex-col justify-center items-center md:flex-row">
-            <img src="/mission.png" alt="vision" className="w-[70px]  object-cover gap-4" />
+            <img src="/mission.png" alt="mission" className="w-[70px]  object-cover gap-4" />
             <div className="flex flex-col gap-2 bg-white rounded-md p-4 items-center">
                 <Typography variant="h5" color={colors.yellow[500]} className="font-[700] text-center" fontFamily="Questrial"
                 >  Mission
@@ -31,7 +31,7 @@ const Vision = ({ mission, vision, values }) => {
             </div>
         </Grid>
         <Grid item xs={12} md={4} className="flex p-4 gap-4 flex-col justify-center items-center md:flex-row">
-            <img src="/core.png" alt="vision" className="w-[70px]  object-cover gap-4" />
+            <img src="/core.png" alt="core values" className="w-[70px]  object-cover gap-4" />
             <div className="flex flex-col gap-2 bg-white rounded-md p-4 items-center">
                 <Typography variant="h5" color={colors.yellow[500]} className="font-[700] text-center" fontFamily="Questrial"
                 >  Core Values

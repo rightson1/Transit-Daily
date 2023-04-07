@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { client } from "../../utils/client"
 import { format } from "timeago.js";
+import Title from "../../components/Title";
 const Blog = ({ posts }) => {
     const { colors } = useGlobalProvider();
     const [page, setPage] = useState(1);
@@ -26,6 +27,11 @@ const Blog = ({ posts }) => {
     const endIndex = startIndex + blogsPerPage;
     const displayedPosts = posts?.slice(startIndex, endIndex);
     return <div className="min-h-screen ">
+        <Title
+            title=" Transit Daily - Bicycle Blog | Latest News and Tips on Biking in Nairobi, Kenya"
+            description="Read the latest biking news and tips in Nairobi, Kenya on the Transit Daily blog. Get advice on bike maintenance, cycling routes, and more. Stay up-to-date on the latest cycling events in Nairobi and beyond."
+        />
+
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
             backgroundImage: `url('/trek/4.png')`,
@@ -113,25 +119,5 @@ export const getStaticProps = async () => {
     }
 }
 export default Blog;
-const blogs = [
-    {
-        name: "How To Fix Tires",
-        img: "/trek/1.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "How to Rent A Bike",
-        img: "/trek/2.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Rongai Picnics",
-        img: "/trek/3.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Cyling Events",
-        img: "/trek/4.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-]
+
+

@@ -8,10 +8,15 @@ import { client } from "../../utils/client"
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import { format } from "timeago.js";
+import Title from "../../components/Title";
 const Event = ({ events }) => {
     const { colors } = useGlobalProvider();
 
     return <div className="min-h-screen ">
+        <Title
+            title="Transit Daily | Upcoming Cycling and Hiking Events in Nairobi and Beyond"
+            description="Stay up-to-date with the latest cycling and hiking events organized by Transit Daily in Nairobi and surrounding areas, including Kajiado and Naivasha. Join us for a fun-filled day of outdoor activities and adventure. Book your spot now!"
+        />
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
             backgroundImage: `url('/trek/1.png')`,
@@ -26,28 +31,6 @@ const Event = ({ events }) => {
                 <Typography fontFamily="Questrial" variant="h5" textAlign="center" className="text-white">
                     Upcomming
                 </Typography>
-
-
-                <Button
-                    className="w-auto px-3"
-                    component="a"
-                    passHref
-                    target="_blank"
-
-
-                    sx={{
-                        border: "1px solid white",
-                        color: "black",
-                        bgcolor: "white",
-                        "&:hover": {
-                            color: "white",
-                            backgroundColor: "transparent"
-                        }
-                    }}
-                >
-                    View Previus Events
-                </Button>
-
 
 
 

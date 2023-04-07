@@ -7,13 +7,17 @@ import { client } from "../../utils/client"
 import PostBody from "../../components/posts/PostBody";
 import { useRouter } from 'next/router'
 import PostSlide from "../../components/posts/PostSlide";
+import Title from "../../components/Title";
 const Events = ({ post }) => {
     const { title, featuredImage: coverImage, author, date, images } = post.fields;
     const { url } = coverImage.fields.file;
     const { colors } = useGlobalProvider();
     const router = useRouter();
     return <div className="min-h-screen ">
-
+        <Title
+            title={title}
+            description={title}
+        />
         <Box className="flex justify-center items-center h-[50vh] flex-col" sx={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${url})`,
             backgroundSize: 'cover',
@@ -45,7 +49,7 @@ const Events = ({ post }) => {
                 ) : (
                     <>
                         <PostBody post={post} />
-                        <PostSlide {...{ images }} />
+                        <PostSlide {...{ images, title }} />
 
                     </>
                 )}

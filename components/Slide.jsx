@@ -83,6 +83,7 @@ const Slide = ({ services, agreement }) => {
                                 </div>
                                 <Box
                                     component="img"
+
                                     className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
                                     src={fields?.image?.fields?.file?.url}
                                 />

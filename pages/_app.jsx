@@ -23,8 +23,14 @@ function MyApp(props) {
   return (
     <>
       <Head>
-        <title>Transit Daily</title>
-        <meta name="description" content="Transite Daily Website" />
+        <title>Transit Daily - Bicycle Repair, Renting, and Cycling Events in Nairobi, Kenya</title>
+        <meta name="description" content="Transit Daily offers affordable bicycle repair, renting, and cycling events in Nairobi and Kajiado. Join us for a fun and active experience!" />
+        <meta name="keywords" content="Transit Daily, bicycle, repair, renting, cycling, events, Nairobi, Kenya, affordable" />
+        <meta name="author" content="Transit Daily" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* <meta property="og:url" content="https://transit-daily.vercel.app/logo.png" /> */}
+        <meta property="og:image" content=" https://transit-daily.vercel.app/logo.png" />
+        <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 

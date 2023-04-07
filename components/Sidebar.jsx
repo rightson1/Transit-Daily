@@ -38,7 +38,7 @@ export default function Sidebar({ open, setOpen }) {
 
         >
             <Box className="flex justify-between">
-                <img src="/logo.png" className='w-[50px] rounded-full' alt="" />
+                <img src="/logo.png" className='w-[50px] rounded-full' alt="Transit Daily Logo" />
                 <IconButton className='self-end jus'>
                     <CloseIcon className='text-[30px]' />
                 </IconButton>
@@ -114,6 +114,11 @@ const listItems = [
     {
         name: 'Events',
         link: '/events'
+    }
+    ,
+    {
+        name: 'Upcoming Events',
+        link: '/upcomming'
     }
     ,
     {

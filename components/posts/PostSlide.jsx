@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/CloseOutlined';
 import * as React from 'react';
 import { useGlobalProvider } from "../../utils/themeContext";
-const PostSlide = ({ images }) => {
+const PostSlide = ({ images, title }) => {
     const [open, setOpen] = React.useState(null);
     const handleClose = () => setOpen(null);
     return <Box
@@ -16,10 +16,12 @@ const PostSlide = ({ images }) => {
         }>    <Grid className="my-10" container spacing={3}>
             {
                 images.map((image, index) => {
+
                     const { url } = image?.fields?.file;
                     return (
                         <Grid item xs={12} md={4} key={index}>
                             <Box component="img"
+                                alt={title}
                                 onClick={() => setOpen(image.fields.file.url)}
                                 className='w-full h-full object-cover max-h-[250px]  cursor-pointer'
                                 src={image.fields.file.url}

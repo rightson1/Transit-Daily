@@ -93,7 +93,7 @@ function HomeNav() {
 
                             }}
                         >
-                            <img src="/logo.png" className='w-[70px] ' alt="" />
+                            <img src="/logo.png" className='w-[70px] ' alt="Transit Daily Logo" />
                         </Box>
 
                         <div className="flex gap-3 items-center color-black ">

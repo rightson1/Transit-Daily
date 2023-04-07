@@ -7,10 +7,13 @@ import { motion } from "framer-motion"
 import { useGlobalProvider } from "../utils/themeContext"
 import Hero from "../components/Hero";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
+import Title from "../components/Title";
 const Contact = () => {
     const { colors } = useGlobalProvider();
     return <div className="min-h-screen">
-
+        <Title title="Contact Transit Daily - Bicycle Repair, Renting and Cycling Events | Nairobi, Kenya"
+            description="Contact Transit Daily for affordable bicycle repair, renting, and cycling events in Nairobi and Kajiado, Kenya. Get in touch with us for more information about our services."
+        />
         <Parallax blur={0} bgImage="/image1.jpg" bgImageAlt="the cat" strength={500} >
             <Box className="min-h-[100vh] bg-[rgba(0,0,0,.4)] gap-4 flex justify-center items-center flex-col text-white   " >
 

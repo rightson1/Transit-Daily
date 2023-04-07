@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import { client } from "../utils/client"
+import Title from "../components/Title";
 const Book = ({ services, rates, bikes, agreement }) => {
     const { colors } = useGlobalProvider();
     const [bikeNames, setBikeNames] = React.useState([]);
@@ -20,6 +21,9 @@ const Book = ({ services, rates, bikes, agreement }) => {
 
     return <div className="">
         <Slide {...{ services, agreement }} />
+        <Title title=" Bike Rental in Nairobi and Kajiado | Affordable Bicycle Rental - Transit Daily"
+            description="Book a bike in Nairobi or Kajiado with Transit Daily. We offer affordable bike rentals at an affordable price. Choose from a wide range of bicycles for your adventure."
+        />
         <Typography my={5} variant="h2" color={colors.grey[500]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
         >    Rates
         </Typography>
@@ -35,9 +39,11 @@ const Book = ({ services, rates, bikes, agreement }) => {
                         return <Grid item xs={12} md={6} key={index}>
                             <div className="flex flex-col items-center justify-center py-5">
                                 <div className="flex flex-col items-center justify-center p-2">
-                                    <img src={
-                                        fields.image.fields.file.url
-                                    } alt="" className="w-full min-h-[300px] max-h-[350px] object-contain" />
+                                    <img
+
+                                        src={
+                                            fields.image.fields.file.url
+                                        } alt={fields.title} className="w-full min-h-[300px] max-h-[350px] object-contain" />
                                     <div className="flex flex-col  py-5 w-full">
                                         <Typography variant="h3" textAlign="left" fontFamily="Questrial" className=" text-black font-[900]  self-start capitalize" >
                                             {fields.title}

@@ -43,7 +43,7 @@ const Left = ({ title }) => {
                     md: `4px solid ${colors.teal[500]} `
                 }
             }} className="md:h-[70vh]">
-                <img src="/repair.jpg" alt="" className="w-full h-full object-cover h-[300px] md:h-full" />
+                <img src="/repair.jpg" alt="Repair" className="w-full h-full object-cover h-[300px] md:h-full" />
 
 
 

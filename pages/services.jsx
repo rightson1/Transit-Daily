@@ -7,9 +7,14 @@ import Right from "../components/Right";
 import Left from "../components/Left";
 import Slide from "../components/Slide";
 import { client } from "../utils/client"
+import Title from "../components/Title";
+
 const Services = ({ services }) => {
+
     const { colors } = useGlobalProvider();
     return <div className="min-h-screen ">
+        <Title title="Transit Daily | Bicycle Repair, Rental and Cycling Events in Nairobi and Kajiado"
+            description="Transit Daily is your go-to source for affordable bicycle repair, rental, and cycling events in Nairobi and Kajiado. Experience the beauty of Kenya on two wheels with our expert team." />
         <Slide {...{ services }} />
 
 

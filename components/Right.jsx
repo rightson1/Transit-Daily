@@ -34,7 +34,8 @@ const Right = ({ service, index }) => {
                 }
             }} className="md:h-[70vh]">
                 <img src={fields.image.fields.file.url}
-                    alt="" className="w-full h-full object-cover h-[300px] md:h-full" />
+
+                    alt={fields.title} className="w-full h-full object-cover h-[300px] md:h-full" />
 
 
 
