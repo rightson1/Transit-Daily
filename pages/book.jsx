@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import BookForm from "../components/Book";
 import { useGlobalProvider } from "../utils/themeContext"
 import Slide from "../components/Slide";
@@ -10,6 +10,14 @@ import Grid from "@mui/material/Grid";
 import { client } from "../utils/client"
 const Book = ({ services, rates, bikes, agreement }) => {
     const { colors } = useGlobalProvider();
+    const [bikeNames, setBikeNames] = React.useState([]);
+    useEffect(() => {
+        setBikeNames(bikes.map(item => ({
+            class: item.fields.class
+            , name: item.fields.title
+        })))
+    }, [bikes])
+
     return <div className="">
         <Slide {...{ services, agreement }} />
         <Typography my={5} variant="h2" color={colors.grey[500]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
@@ -29,7 +37,7 @@ const Book = ({ services, rates, bikes, agreement }) => {
                                 <div className="flex flex-col items-center justify-center p-2">
                                     <img src={
                                         fields.image.fields.file.url
-                                    } alt="" className="w-full min-h-[300px] max-h-[350px] object-cover  " />
+                                    } alt="" className="w-full min-h-[300px] max-h-[350px] object-contain" />
                                     <div className="flex flex-col  py-5 w-full">
                                         <Typography variant="h3" textAlign="left" fontFamily="Questrial" className=" text-black font-[900]  self-start capitalize" >
                                             {fields.title}
@@ -59,7 +67,7 @@ const Book = ({ services, rates, bikes, agreement }) => {
             </Grid>
 
         </div>
-        <BookForm />
+        <BookForm {...{ bikes: bikeNames }} />
     </div>;
 };
 

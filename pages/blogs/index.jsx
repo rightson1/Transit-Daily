@@ -5,8 +5,26 @@ import Pagination from '@mui/material/Pagination';
 import { useGlobalProvider } from "../../utils/themeContext"
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import Link from "next/link";
-const Blog = () => {
+import { useState, useEffect } from "react";
+import { client } from "../../utils/client"
+import { format } from "timeago.js";
+const Blog = ({ posts }) => {
     const { colors } = useGlobalProvider();
+    const [page, setPage] = useState(1);
+    const [blogsPerPage, setBlogsPerPage] = useState(3);
+    const totalBlogs = posts?.length;
+
+    useEffect(() => {
+        setPage(1);
+    }, [posts]);
+
+    const handlePageChange = (event, value) => {
+        setPage(value);
+    };
+
+    const startIndex = (page - 1) * blogsPerPage;
+    const endIndex = startIndex + blogsPerPage;
+    const displayedPosts = posts?.slice(startIndex, endIndex);
     return <div className="min-h-screen ">
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
@@ -24,31 +42,35 @@ const Blog = () => {
 
             </div>
         </Box>
-        <div className="flex items-center justify-center p-5 md:p-10 flex-col">
+        <div className="flex items-center justify-center p-5 md:p-10 flex-col pb-10">
             <Grid container spacing={2}>
                 {
-                    blogs.map((item, index) => {
+                    displayedPosts.map((item, index) => {
 
+                        const { title, slug, featuredImage: coverImage, excerpt, date } = item.fields
                         return <Grid item xs={12} md={6} key={index}>
                             <div className="flex flex-col items-center justify-center py-5">
                                 <div className="flex flex-col items-center justify-center p-2">
-                                    <img src={item.img} alt="" className="w-full min-h-[300px] max-h-[350px] object-cover " />
+                                    <img src={`${coverImage.fields.file.url}`}
+                                        srcSet={`${coverImage.fields.file.url}`} alt="" className="w-full min-h-[300px] max-h-[350px] object-cover " />
                                     <div className="flex flex-col items-center justify-center py-5">
                                         <Typography variant="h3" textAlign="left" fontFamily="Questrial" className=" text-black font-[900]  self-start capitalize" >
-                                            {item.name}
+                                            {title}
                                         </Typography>
                                         <div className="flex w-full py-5">
                                             <Divider flexItem width="100%" sx={{ borderBottomWidth: 2 }} />
                                         </div>
 
                                         <Typography variant="body1" fontFamily="Questrial" className=" text-black  " >
-                                            {item.pr}
+                                            {excerpt}
                                         </Typography>
                                         <div className="flex w-full justify-between mt-4">
                                             <Typography variant="body1" fontFamily="Questrial" className=" text-black  " >
-                                                Jan 18 2022
+                                                {
+                                                    format(date)
+                                                }
                                             </Typography>
-                                            <Link href={`/blogs/134`}>
+                                            <Link href={`/blogs/${slug}`}>
                                                 <a className="flex items-center justify-center self-start">
                                                     <Typography variant="h1" fontFamily="Questrial" className=" text-black font-[900] text-xl" >
                                                         Read More
@@ -69,9 +91,9 @@ const Blog = () => {
             </Grid>
             <div className="flex w-full p-5 justify-center">
                 <Pagination
-                // count={Math.ceil(totalBlogs / blogsPerPage)}
-                // page={page}
-                // onChange={handlePageChange}
+                    count={Math.ceil(totalBlogs / blogsPerPage)}
+                    page={page}
+                    onChange={handlePageChange}
                 />
             </div>
 
@@ -80,7 +102,16 @@ const Blog = () => {
 
     </div>;
 };
+export const getStaticProps = async () => {
+    const response = await client.getEntries({ content_type: 'blogs' })
 
+    return {
+        props: {
+            posts: response.items,
+            revalidate: 60
+        }
+    }
+}
 export default Blog;
 const blogs = [
     {

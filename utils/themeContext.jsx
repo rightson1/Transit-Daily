@@ -14,6 +14,7 @@ import { ThemeProvider as Theme } from "@mui/material/styles";
 import { CssBaseline, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
 import { AuthProvider } from "./authContext";
+import { Toaster } from "react-hot-toast";
 // import { QueryClient, QueryClientProvider } from "react-query";
 const ThemeContext = createContext();
 
@@ -62,6 +63,7 @@ export const ThemeProvider = ({ children }) => {
                 <AuthProvider>
                     <CssBaseline />
                     {children}
+                    <Toaster />
                 </AuthProvider>
             </Theme>
             {/* </QueryClientProvider> */}
