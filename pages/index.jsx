@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Fade } from 'react-slideshow-image';
 import { useGlobalProvider } from "../utils/themeContext";
 import Typewriter from 'typewriter-effect';;

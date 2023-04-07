@@ -1,6 +1,5 @@
 import { Skeleton, Typography } from "@mui/material";
-import { Box, Grid, Divider } from "@mui/material";
-import { format } from 'timeago.js';
+import { Box } from "@mui/material";
 import React from "react";
 import { useGlobalProvider } from "../../utils/themeContext"
 import { client } from "../../utils/client"

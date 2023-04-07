@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import { useGlobalProvider } from "../utils/themeContext";
 import { useRouter } from 'next/router'
 import { Button } from '@mui/material';

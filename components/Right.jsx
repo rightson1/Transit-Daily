@@ -1,9 +1,6 @@
-import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import React from "react";
-import { Parallax } from 'react-parallax';
-import Typewriter from 'typewriter-effect';
-import { motion } from "framer-motion"
 import { useGlobalProvider } from "../utils/themeContext"
 
 const Right = ({ service, index }) => {

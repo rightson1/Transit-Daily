@@ -1,5 +1,10 @@
-import { Typography } from "@mui/material";
-import { Box, Grid, Divider } from "@mui/material";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Skeleton from '@mui/material/Skeleton';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 import React from "react";
 import Pagination from '@mui/material/Pagination';
 import { useGlobalProvider } from "../../utils/themeContext"
@@ -37,12 +42,12 @@ const Blog = ({ posts }) => {
             backgroundImage: `url('/trek/4.png')`,
             backgroundSize: 'cover',
         }}>
-            <Typography variant="h2" color={colors.black[100]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
+            <Typography variant="h2" color={colors.grey[900]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
             >   Blogs And News
             </Typography>
             <div className="flex gap-2 my-5">
                 <Box bgcolor={colors.grey[800]} className="w-20 h-1 "></Box>
-                <Box bgcolor={colors.teal[500]} className="w-20 h-1 "></Box>
+                <Box bgcolor={colors.teal[700]} className="w-20 h-1 "></Box>
                 <Box bgcolor={colors.grey[800]} className="w-20 h-1 "></Box>
 
 

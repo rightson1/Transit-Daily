@@ -1,12 +1,13 @@
-import { Typography } from "@mui/material";
-import { Box, Grid, Divider } from "@mui/material";
+
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import React from "react";
-import Pagination from '@mui/material/Pagination';
 import { useGlobalProvider } from "../../utils/themeContext"
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { client } from "../../utils/client"
 import Link from "next/link";
-import Button from "@mui/material/Button";
 import { format } from "timeago.js";
 import Title from "../../components/Title";
 const Event = ({ events }) => {

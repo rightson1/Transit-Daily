@@ -1,5 +1,6 @@
-import { Box, Button, Grid } from '@mui/material';
-import RichText from '../RichText'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/CloseOutlined';
 import * as React from 'react';

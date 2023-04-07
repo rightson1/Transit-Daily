@@ -1,7 +1,10 @@
 import React from "react";
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Box, Button, Typography } from "@mui/material";
+import { Swiper, SwiperSlide, } from 'swiper/react';
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography"
+
 const Slide = ({ services, agreement }) => {
 
     return <Box

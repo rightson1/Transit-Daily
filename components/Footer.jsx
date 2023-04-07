@@ -1,5 +1,8 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import React from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,6 +10,7 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { client } from "../utils/client";
+import Link from 'next/link';
 const Footer = ({ footer }) => {
 
     const { colors } = useGlobalProvider()
@@ -18,16 +22,29 @@ const Footer = ({ footer }) => {
                 md: '1.5rem'
             }}>{title}</Typography>
     )
-    const Listing = ({ icon, text }) => (
-        <Box className="flex gap-2 w-full">
-            {icon}
-            <Typography fontFamily="Questrial" className="text-[17px] text-white" >
-                {text}
-            </Typography>
+    const Listing = ({ icon, text, link }) => {
+        return (
+            !!link ? (
+                <Box className="flex gap-2 w-full" component="a" target='_black' href={link}>
+                    {icon}
+                    <Typography fontFamily="Questrial" className="text-[17px] text-white" >
+                        {text}
+                    </Typography>
 
-        </Box>
-    )
+                </Box>
+            )
+                : (
+                    <Box className="flex gap-2 w-full">
+                        {icon}
+                        <Typography fontFamily="Questrial" className="text-[17px] text-white" >
+                            {text}
+                        </Typography>
 
+                    </Box>
+                )
+
+        )
+    }
     return <Grid container spacing={5}
         className="py-20 px-5 md:px-10  h-[140vh] md:h-[70vh]"
         sx={{
@@ -37,16 +54,17 @@ const Footer = ({ footer }) => {
         <Grid item xs={12} md={4} className="flex flex-col ">
             <img src="/logo.png" alt="" className="w-[150px]" />
             <Typography fontFamily="Questrial" className="text-[17px] text-white" >
-                On a case-by-case basis, Locus Studio enters into strategic partnerships/associations with other consultants in order to fill skill & experience gaps in the execution of complex projects.
+                Transit Daily offers affordable bicycle repair, renting, and cycling events in Nairobi and Kajiado. Join us for a fun and active experience!
             </Typography>
 
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
             <Heading title="Rongai Office" />
-            <Listing text="GF8 Delight Apartments, Diani Rd Off Ole Odume Rd" icon={
-                <LocationOnIcon className="text-white" />
-            } />
-            <Listing text="P.O. Box 18689 Nairobi 00100" icon={
+            <Listing text="JQ5M + 52R, Ole Kasasi Rd,
+ Ongata Rongai" icon={
+                    <LocationOnIcon className="text-white" />
+                } />
+            <Listing text="kipyegonkoech123@gmail.com" icon={
                 <EmailIcon className="text-white" />
             } />
             <Divider sx={{
@@ -58,12 +76,12 @@ const Footer = ({ footer }) => {
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
             <Heading title="Our Contacts" />
-            <Listing text="07123456789 (Line One Koech)" icon={
+            <Listing text="0711775802 (Line One Koech)" icon={
                 <LocalPhoneIcon className="text-white" />
             } />
 
 
-            <Listing text="07123456789 (Line 2 Mike)" icon={
+            <Listing text="0102526386 (Line 2 Koech)" icon={
                 <LocalPhoneIcon className="text-white" />
             } />
             <Divider sx={{
@@ -71,11 +89,11 @@ const Footer = ({ footer }) => {
             }}
             />
             <Heading title="Social Media" />
-            <Listing text="Facebook" icon={
+            <Listing text="Facebook" link="https://www.facebook.com/transitdaily254/" icon={
                 <FacebookIcon className="text-white" />
             } />
-            <Listing text="Instagram" icon={
-                <InstagramIcon className="text-white" />
+            <Listing text="Map" link="https://www.google.com/maps/place/Transit+Daily/@-1.3920625,36.7803738,17z/data=!4m16!1m7!3m6!1s0x182f0f02a2bd9467:0x69d6a1873c9730b3!2sTransit+Daily!8m2!3d-1.3920625!4d36.7825625!16s%2Fg%2F11tm_7zw_h!3m7!1s0x182f0f02a2bd9467:0x69d6a1873c9730b3!8m2!3d-1.3920625!4d36.7825625!9m1!1b1!16s%2Fg%2F11tm_7zw_h" icon={
+                <LocationOnIcon className="text-white" />
             } />
 
         </Grid>

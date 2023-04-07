@@ -1,4 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import React from "react";
 import { useGlobalProvider } from "../utils/themeContext";
 const Vision = ({ mission, vision, values }) => {

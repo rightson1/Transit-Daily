@@ -1,17 +1,15 @@
-import { Box, Button, Typography } from "@mui/material";
-import { Fade } from 'react-slideshow-image';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import Link from "next/link";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { useGlobalProvider } from "../utils/themeContext";
 import Typewriter from 'typewriter-effect';;
 import About from "../components/About";
-import Services from "../components/Services";
-import Gidi from "../components/Gidi";
 import { client } from "../utils/client"
+import Gidi from "../components/Gidi";
 import Vision from "../components/Vision";
 import Title from "../components/Title";
 export default function Home({ content }) {
-    const { isMobileSmall, colors } = useGlobalProvider();
+    const { colors } = useGlobalProvider();
     const { autoType, mission, vision, values, title1, title2, title3, paragraph1, paragraph2, paragraph3, featuredImage } = content[0]?.fields;
     const font = {
         xs: '2.6rem',

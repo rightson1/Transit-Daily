@@ -1,10 +1,7 @@
 import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import React, { useEffect } from "react";
+import React from "react";
 import { useGlobalProvider } from "../utils/themeContext"
-import Hero from "../components/Hero";
 import Right from "../components/Right";
-import Left from "../components/Left";
 import Slide from "../components/Slide";
 import { client } from "../utils/client"
 import Title from "../components/Title";

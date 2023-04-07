@@ -9,6 +9,7 @@ import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import { client } from "../utils/client"
 import Title from "../components/Title";
+
 const Book = ({ services, rates, bikes, agreement }) => {
     const { colors } = useGlobalProvider();
     const [bikeNames, setBikeNames] = React.useState([]);

@@ -1,12 +1,12 @@
-import { Skeleton, Typography } from "@mui/material";
-import { Box, Button } from "@mui/material";
-import { format } from 'timeago.js';
+import Skeleton from "@mui/material/Skeleton";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import React from "react";
 import { useGlobalProvider } from "../../utils/themeContext"
 import { client } from "../../utils/client"
 import PostBody from "../../components/posts/PostBody";
 import { useRouter } from 'next/router'
-import PostSlide from "../../components/posts/PostSlide";
 import formatDate from "../../components/formatDate";
 import Title from "../../components/Title";
 const Events = ({ post }) => {
