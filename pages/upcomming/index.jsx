@@ -7,25 +7,10 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { client } from "../../utils/client"
 import Link from "next/link";
 import Button from "@mui/material/Button";
-import { useState, useEffect } from "react";
 import { format } from "timeago.js";
 const Event = ({ events }) => {
     const { colors } = useGlobalProvider();
-    const [page, setPage] = useState(1);
-    const [eventsPerPage, setEventsPerPage] = useState(3);
-    const totalEvents = events?.length;
 
-    useEffect(() => {
-        setPage(1);
-    }, [events]);
-
-    const handlePageChange = (event, value) => {
-        setPage(value);
-    };
-
-    const startIndex = (page - 1) * eventsPerPage;
-    const endIndex = startIndex + eventsPerPage;
-    const displayedEvents = events?.slice(startIndex, endIndex);
     return <div className="min-h-screen ">
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
@@ -39,27 +24,30 @@ const Event = ({ events }) => {
                         md: '3.5rem'
                     }}>Events</Typography>
                 <Typography fontFamily="Questrial" variant="h5" textAlign="center" className="text-white">
-                    Upcomming & Previus
+                    Upcomming
                 </Typography>
 
-                <Link href="/upcomming">
 
-                    <Button
+                <Button
+                    className="w-auto px-3"
+                    component="a"
+                    passHref
+                    target="_blank"
 
-                        className="w-auto px-3"
-                        sx={{
-                            border: "1px solid white",
-                            color: "black",
-                            backgroundColor: "white !important",
-                            "&:hover": {
-                                color: "white",
-                                backgroundColor: "transparent !important"
-                            }
-                        }}
-                    >
-                        View Upcomming Events
-                    </Button>
-                </Link>
+
+                    sx={{
+                        border: "1px solid white",
+                        color: "black",
+                        bgcolor: "white",
+                        "&:hover": {
+                            color: "white",
+                            backgroundColor: "transparent"
+                        }
+                    }}
+                >
+                    View Previus Events
+                </Button>
+
 
 
 
@@ -72,7 +60,7 @@ const Event = ({ events }) => {
 
             <Grid container spacing={2}>
                 {
-                    displayedEvents.map((item, index) => {
+                    events.map((item, index) => {
                         const { title, slug, featuredImage: coverImage, excerpt, date } = item.fields
                         const { url } = coverImage.fields.file
                         return <Grid item xs={12} md={6} key={index} className="flex flex-col items-center justify-center py-5 ">
@@ -91,7 +79,7 @@ const Event = ({ events }) => {
                                             format(date)
                                         }
                                     </Typography>
-                                    <Link href={`/events/${slug}`}>
+                                    <Link href={`/upcomming/${slug}`}>
                                         <a className="flex items-center justify-center self-start">
                                             <Typography variant="h1" fontFamily="Questrial" className=" text-black font-[900] text-xl" >
                                                 Read More
@@ -109,13 +97,6 @@ const Event = ({ events }) => {
 
 
             </Grid>
-            <div className="flex w-full p-5 justify-center">
-                <Pagination
-                    count={Math.ceil(totalEvents / eventsPerPage)}
-                    page={page}
-                    onChange={handlePageChange}
-                />
-            </div>
 
 
         </div>
@@ -126,7 +107,7 @@ const Event = ({ events }) => {
 
 
 export const getStaticProps = async () => {
-    const response = await client.getEntries({ content_type: 'events' })
+    const response = await client.getEntries({ content_type: 'upcomming' })
 
     return {
         props: {
@@ -137,25 +118,3 @@ export const getStaticProps = async () => {
 }
 
 export default Event;
-const events = [
-    {
-        name: "How To Fix Tires",
-        img: "/trek/1.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "How to Rent A Bike",
-        img: "/trek/2.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Rongai Picnics",
-        img: "/trek/3.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Cyling Events",
-        img: "/trek/4.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-]

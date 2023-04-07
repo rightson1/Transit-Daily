@@ -11,7 +11,7 @@ import { client } from "../utils/client"
 import Vision from "../components/Vision";
 export default function Home({ content }) {
     const { isMobileSmall, colors } = useGlobalProvider();
-    const { autoType, title1, title2, title3, paragraph1, paragraph2, paragraph3, featuredImage } = content[0]?.fields;
+    const { autoType, mission, vision, values, title1, title2, title3, paragraph1, paragraph2, paragraph3, featuredImage } = content[0]?.fields;
     const font = {
         xs: '2.6rem',
         md: '5.5rem'
@@ -79,7 +79,7 @@ export default function Home({ content }) {
         </div>
         <About title={title1} desc={paragraph1} />
 
-        <Vision />
+        <Vision {...{ mission, vision, values }} />
 
         <Gidi {...{ title2, title3, paragraph3, paragraph2 }} />
 

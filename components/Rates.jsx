@@ -23,7 +23,7 @@ const rows = [
 
 export default function Rates({ rates }) {
     return (
-        <TableContainer component={Paper} className='p-5  p-10'>
+        <TableContainer component={Paper} className='p-3  md:p-10'>
             <Table aria-label="simple table">
                 <TableHead>
                     <TableRow>

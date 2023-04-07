@@ -6,8 +6,9 @@ import { useGlobalProvider } from "../../utils/themeContext"
 import { client } from "../../utils/client"
 import PostBody from "../../components/posts/PostBody";
 import { useRouter } from 'next/router'
-const Blog = ({ post }) => {
-    const { title, featuredImage: coverImage, author, date, } = post.fields;
+import PostSlide from "../../components/posts/PostSlide";
+const Events = ({ post }) => {
+    const { title, featuredImage: coverImage, author, date, images } = post.fields;
     const { url } = coverImage.fields.file;
     const { colors } = useGlobalProvider();
     const router = useRouter();
@@ -28,20 +29,9 @@ const Blog = ({ post }) => {
 
             </div>
         </Box>
-        <Box item xs={12} md={6} className="flex   gap-3 justify-between p-5">
-            <Typography variant='h5' fontFamily="Questrial">
-                by {author}
-            </Typography>
-            <Typography variant='body1' fontFamily="Questrial" className='flex justify-between'>
-                <span className='italic'>
-                    {format(date)}
-                </span>
-            </Typography>
 
 
-        </Box>
-
-        <div className='w-full flex justify-center px-5 md:px-10 pb-10'>
+        <div className='w-full flex justify-center px-5 md:px-10 pb-20'>
             <article className='md:max-w-3/4 max-w-[900px]'>
                 {router.isFallback ? (
                     <div>
@@ -55,6 +45,8 @@ const Blog = ({ post }) => {
                 ) : (
                     <>
                         <PostBody post={post} />
+
+
                     </>
                 )}
             </article>
@@ -68,14 +60,14 @@ export const getStaticProps = async ({ params }) => {
 
     const { slug } = params
     const response = await cfClient.getEntries({
-        content_type: 'blogs',
+        content_type: 'events',
         'fields.slug': slug
     })
 
     if (!response?.items?.length) {
         return {
             redirect: {
-                destination: '/blogs',
+                destination: '/events',
                 permanent: false
             }
         }
@@ -90,7 +82,7 @@ export const getStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths = async () => {
-    const response = await client.getEntries({ content_type: 'blogs' })
+    const response = await client.getEntries({ content_type: 'events' })
     const paths = response.items.map(item => ({
         params: { slug: item.fields.slug }
     }))
@@ -101,4 +93,4 @@ export const getStaticPaths = async () => {
     }
 }
 
-export default Blog;
+export default Events;
