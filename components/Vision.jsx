@@ -27,7 +27,7 @@ const Vision = ({ mission, vision, values }) => {
 
                 <Typography className=" text-center " color={colors.black[500]} fontFamily="Questrial"
                 >
-                    {vision}
+                    {mission}
                 </Typography>
             </div>
         </Grid>
