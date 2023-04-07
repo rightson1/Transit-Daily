@@ -140,30 +140,9 @@ export const getStaticProps = async () => {
         props: {
             events: response.items,
             revalidate: 60
-        }
+        },
+        revalidate: 60
     }
 }
 
 export default Event;
-const events = [
-    {
-        name: "How To Fix Tires",
-        img: "/trek/1.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "How to Rent A Bike",
-        img: "/trek/2.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Rongai Picnics",
-        img: "/trek/3.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-    {
-        name: "Cyling Events",
-        img: "/trek/4.png",
-        pr: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aliquid aperiam et culpa quis totam recusandae. Ad, quasi."
-    },
-]

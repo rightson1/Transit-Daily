@@ -52,6 +52,7 @@ export const getStaticProps = async () => {
             services: response?.items || [],
             revalidate: 60
         }
+        , revalidate: 60
     }
 }
 

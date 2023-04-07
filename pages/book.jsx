@@ -92,8 +92,10 @@ export const getStaticProps = async () => {
             rates: rates?.items || [],
             bikes: bikes?.items || [],
             agreement: agreement?.items || [],
-            revalidate: 60
-        }
+
+        },
+        revalidate: 60,
+
     }
 }
 

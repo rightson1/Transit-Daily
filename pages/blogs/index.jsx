@@ -120,7 +120,8 @@ export const getStaticProps = async () => {
         props: {
             posts: response.items,
             revalidate: 60
-        }
+        },
+        revalidate: 60
     }
 }
 export default Blog;

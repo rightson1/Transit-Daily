@@ -108,7 +108,8 @@ export const getStaticProps = async () => {
       services: response?.items || [],
       content: content?.items,
       revalidate: 60
-    }
+    },
+    revalidate: 60,
   }
 }
 
@@ -116,25 +117,3 @@ const properties = {
   prevArrow: <button style={{ ...buttonStyle }}></button>,
   nextArrow: <button style={{ ...buttonStyle }}></button>
 }
-const imagess = [
-  {
-    url: 'trek.jpg',
-    caption: 'Slide 1'
-  },
-  {
-    url: '/trek/1.png',
-    caption: 'Slide 3'
-  },
-  {
-    url: '/trek/2.png',
-    caption: 'Slide 3'
-  },
-  {
-    url: '/trek/3.png',
-    caption: 'Slide 3'
-  },
-  {
-    url: '/trek/4.png',
-    caption: 'Slide 3'
-  },
-];
