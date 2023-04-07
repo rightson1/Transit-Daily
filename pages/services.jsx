@@ -26,7 +26,7 @@ const Services = ({ services }) => {
 
 
         </div>
-        <div className="flex flex-col pb-[50px] md:pb-0">
+        <div className="flex flex-col  md:pb-0">
             {
                 services.map((service, index) => {
                     return (

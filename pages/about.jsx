@@ -7,15 +7,17 @@ import Typewriter from 'typewriter-effect';;
 import About from "../components/About";
 import Services from "../components/Services";
 import Gidi from "../components/Gidi";
+import { client } from "../utils/client"
 import Vision from "../components/Vision";
-export default function Home() {
+export default function Home({ content }) {
     const { isMobileSmall, colors } = useGlobalProvider();
+    const { autoType, title1, title2, title3, paragraph1, paragraph2, paragraph3, featuredImage } = content[0]?.fields;
     const font = {
-        xs: '2.7rem',
+        xs: '2.6rem',
         md: '5.5rem'
 
     }
-    return (<div className="relative flex flex-col ">
+    return (<div className="relative flex flex-col  w-screen overflow-x-hidden">
         <div className="flex  w-full h-[60vh] md:h-[70vh]   z-[1] ">
 
             <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
@@ -35,7 +37,7 @@ export default function Home() {
                             fontSize={font}
                             sx={{
                                 color: colors.black[100]
-                            }}> G.Koech </Typography>
+                            }}> Koech </Typography>
 
 
                     </Typography>
@@ -49,7 +51,7 @@ export default function Home() {
                     }}>
                     <Typewriter
                         options={{
-                            strings: ['Founder', 'Entepreneur', 'Designer'],
+                            strings: autoType?.split('//'),
                             autoStart: true,
                             loop: true,
                         }}
@@ -71,15 +73,15 @@ export default function Home() {
                     }
                 }}
             >
-                <img style={{ width: "100%" }} src="/gidi.jpg" className="object-contain h-full" />)
+                <img style={{ width: "100%" }} src={featuredImage.fields.file.url} className="object-contain h-full" />)
 
             </Box>
         </div>
-        <About title=" We Offer The Best Services" desc="Welcome to Transit Daily, your go-to bike rental service for convenient and affordable transportation. Our bikes are designed for comfort and safety, with lightweight frames, comfortable seats, and easy-to-use gears. Perfect for commuters, travelers, or anyone looking for a quick ride around town. We are committed to sustainability and reducing our carbon footprint, which is why all of our bikes are eco-friendly and powered by pedal. With flexible rental options, you can choose the plan that works best for you. Simply book online or through our app, pick up your bike, and start exploring your city in a fun and eco-friendly way!" />
+        <About title={title1} desc={paragraph1} />
 
         <Vision />
 
-        <Gidi />
+        <Gidi {...{ title2, title3, paragraph3, paragraph2 }} />
 
     </div>
     );
@@ -90,18 +92,13 @@ export default function Home() {
 const buttonStyle = {
     display: 'none'
 };
-const properties = {
-    prevArrow: <button style={{ ...buttonStyle }}></button>,
-    nextArrow: <button style={{ ...buttonStyle }}></button>
-}
-const images = [
-    {
-        url: '/gidi.png',
-        caption: 'Slide 1'
-    },
-    {
-        url: '/gidi.jpg',
-        caption: 'Slide 3'
-    },
+export const getStaticProps = async () => {
+    const response = await client.getEntries({ content_type: 'aboutUs' });
 
-];
+    return {
+        props: {
+            content: response?.items,
+            revalidate: 60
+        }
+    }
+}

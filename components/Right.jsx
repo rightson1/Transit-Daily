@@ -16,7 +16,6 @@ const Right = ({ service, index }) => {
                 md: 'none'
             },
             border: {
-                xs: `none`,
                 md: `4px solid ${colors.teal[500]} `
 
             },
@@ -59,7 +58,7 @@ const Right = ({ service, index }) => {
             </Grid>
 
         </Grid>
-    </div>
+    </div >
 };
 
 export default Right;

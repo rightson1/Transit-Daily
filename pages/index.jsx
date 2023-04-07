@@ -1,43 +1,15 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Fade } from 'react-slideshow-image';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import Link from "next/link";
 import { useGlobalProvider } from "../utils/themeContext";
 import Typewriter from 'typewriter-effect';;
 import About from "../components/About";
 import Services from "../components/Services";
 import Work from "../components/Work";
-export default function Home() {
-  const { isMobileSmall, colors } = useGlobalProvider()
-  const list = [
-    {
-      title: 'About',
-      link: '/about'
-    }, {
-      title: 'Services',
-      link: "/services"
-    },
-    {
-      title: "Book Bike",
-      link: '/book'
-    },
+import { client } from "../utils/client"
+export default function Home({ services, content }) {
+  const { colors } = useGlobalProvider();
+  const { autoType, title1, title2, title3, paragraph1, paragraph2, paragraph3, slideShow } = content[0]?.fields;
 
-    {
-      title: "Events",
-      link: '/events'
-    },
-
-    {
-      title: "Blogs",
-      link: '/blogs'
-    },
-    {
-      title: "Contact",
-      link: '/contact'
-    },
-
-
-  ]
   const font = {
     xs: '3.5rem',
     md: '5.5rem'
@@ -77,7 +49,7 @@ export default function Home() {
           }}>
           <Typewriter
             options={{
-              strings: ['Dream in Motion', 'Quality Bikes At Budget Friendly Rates'],
+              strings: autoType?.split('//'),
               autoStart: true,
               loop: true,
             }}
@@ -101,14 +73,19 @@ export default function Home() {
           duration={3000}
         >
           {
-            images.map((each, index) => <img key={index} style={{ width: "100%" }} src={each.url} className="z-[]" />)
+            slideShow.map((each, index) => {
+              const { url } = each.fields.file;
+              return (
+                <img key={index} style={{ width: "100%" }} src={url} className="z-[]" />
+              )
+            })
           }
         </Fade>
       </Box>
     </div>
-    <About title=" We Offer The Best Services" desc="Welcome to Transit Daily, your go-to bike rental service for convenient and affordable transportation. Our bikes are designed for comfort and safety, with lightweight frames, comfortable seats, and easy-to-use gears. Perfect for commuters, travelers, or anyone looking for a quick ride around town. We are committed to sustainability and reducing our carbon footprint, which is why all of our bikes are eco-friendly and powered by pedal. With flexible rental options, you can choose the plan that works best for you. Simply book online or through our app, pick up your bike, and start exploring your city in a fun and eco-friendly way!" />
-    <Services />
-    <Work />
+    <About title={title1} desc={paragraph1} />
+    <Services {...{ services }} />
+    <Work {...{ title2, paragraph2 }} />
   </div>
   );
 
@@ -118,11 +95,25 @@ export default function Home() {
 const buttonStyle = {
   display: 'none'
 };
+export const getStaticProps = async () => {
+  const response = await client.getEntries({ content_type: 'services' });
+  const content = await client.getEntries({ content_type: 'homePage' });
+
+
+  return {
+    props: {
+      services: response?.items || [],
+      content: content?.items,
+      revalidate: 60
+    }
+  }
+}
+
 const properties = {
   prevArrow: <button style={{ ...buttonStyle }}></button>,
   nextArrow: <button style={{ ...buttonStyle }}></button>
 }
-const images = [
+const imagess = [
   {
     url: 'trek.jpg',
     caption: 'Slide 1'
