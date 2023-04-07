@@ -13,15 +13,9 @@ import { Dashboard, Sell } from '@mui/icons-material';
 import { Button, IconButton, ListItemIcon } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useRouter } from 'next/router';
-import { useAuth } from '../utils/authContext';
-import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
-import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
-import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import BookIcon from '@mui/icons-material/Book';
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import Link from 'next/link';
-export default function Sidebar() {
-    const { open, setOpen, colors } = useGlobalProvider()
+export default function Sidebar({ open, setOpen }) {
+    const { colors } = useGlobalProvider()
     const router = useRouter()
 
     const toggleDrawer = (click) => (event) => {

@@ -44,7 +44,7 @@ export default function Home() {
 
   }
   return (<div className="relative">
-    <div className="flex  w-full h-[80vh]  z-[1]">
+    <div className="flex  w-full h-[60vh] md:h-[80vh]  z-[1]">
 
       <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
         <div className="flex justify-center items-center">
@@ -84,7 +84,7 @@ export default function Home() {
           />
         </Typography>
       </div>
-      <div className="absolute top-0 h-[80vh] w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
+      <div className="absolute top-0 h-[60vh] md:h-[80vh]  w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
       <Box
         sx={{
           "& img": {
@@ -96,7 +96,7 @@ export default function Home() {
             bgcolor: 'red'
           }
         }}
-        className="absolute w-screen h-[80vh] top-0 z-[1] overflow-hidden">
+        className="absolute w-screen h-[60vh] md:h-[80vh]  top-0 z-[1] overflow-hidden">
         <Fade scale={0.4} {...properties}
           duration={3000}
         >

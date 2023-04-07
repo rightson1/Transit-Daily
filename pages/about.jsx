@@ -11,31 +11,31 @@ import Vision from "../components/Vision";
 export default function Home() {
     const { isMobileSmall, colors } = useGlobalProvider();
     const font = {
-        xs: '3.5rem',
+        xs: '2.7rem',
         md: '5.5rem'
 
     }
     return (<div className="relative flex flex-col ">
-        <div className="flex  w-full h-[70vh]  z-[1]">
+        <div className="flex  w-full h-[60vh] md:h-[70vh]   z-[1] ">
 
             <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
                 <div className="flex justify-center items-center">
-                    <Typography fontFamily="Questrial" variant="h1" className="font-[900] flex items-center gap-4" textAlign="center"
+                    <Typography fontFamily="Questrial" variant="h1" className="font-[900] flex items-center gap-1" textAlign="center"
                     >
-                        <div className="flex">
+                        <div className="flex px-5">
                             <Typography component="span" className="font-[900]" fontSize={font} sx={{
                                 color: colors.yellow[500]
-                            }}>Gedi</Typography>
+                            }}>Kipye</Typography>
                             <Typography component="span" className="font-[900]"
                                 fontSize={font} sx={{
                                     color: colors.teal[500]
-                                }}>on</Typography>
+                                }}>gon</Typography>
                         </div>
                         <Typography component="span" className="font-[900]"
                             fontSize={font}
                             sx={{
                                 color: colors.black[100]
-                            }}>  Koech </Typography>
+                            }}> G.Koech </Typography>
 
 
                     </Typography>
@@ -49,26 +49,28 @@ export default function Home() {
                     }}>
                     <Typewriter
                         options={{
-                            strings: ['Ongata Rongai', 'Nairobi', 'Kenya'],
+                            strings: ['Founder', 'Entepreneur', 'Designer'],
                             autoStart: true,
                             loop: true,
                         }}
                     />
                 </Typography>
             </div>
-            <div className="absolute top-0 h-[70vh] w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
+            <div className="absolute top-0  h-[60vh] md:h-[70vh] w-screen z-[2] bg-[rgba(0,0,0,.7)] "></div>
             <Box
+                className=" h-[60vh] md:h-[70vh] absolute top-0 w-screen z-[1] "
                 sx={{
                     "& img": {
-                        height: '70vh',
                         objectFit: 'cover',
+                        imageOrientation: 'from-image',
+                        objectPosition: "top",
                     },
                     "& .indicator": {
                         display: "none",
                         bgcolor: 'red'
                     }
                 }}
-                className="absolute w-screen h-[70vh] top-0 z-[1]">
+            >
                 <img style={{ width: "100%" }} src="/gidi.jpg" className="object-contain h-full" />)
 
             </Box>

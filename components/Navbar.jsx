@@ -11,6 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import { Typography } from '@mui/material';
 import Link from 'next/link';
+import Sidebar from './Sidebar';
 const nav = [{
     name: 'Home',
     link: '/'
@@ -45,7 +46,8 @@ const nav = [{
 function Navbar() {
     const router = useRouter()
     const path = router.pathname.split('/')[1]
-    const { colors, setOpen } = useGlobalProvider()
+    const [open, setOpen] = useState(false);
+    const { colors } = useGlobalProvider()
     const handleOpenNavMenu = (event) => {
         setOpen(true)
     };
@@ -186,6 +188,7 @@ function Navbar() {
                     </Toolbar>
                 </Container>
             </AppBar>
+            <Sidebar {...{ open, setOpen }} />
 
         </Box >
     );
