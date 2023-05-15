@@ -27,12 +27,14 @@ const Footer = ({ footer }) => {
     const Listing = ({ icon, text, link }) => {
         return (
             !!link ? (
-                <Box className="flex gap-2 w-full" component="a" target='_black' href={link}>
-                    {icon}
-                    <Typography fontFamily="Questrial" className="text-[17px] text-white" >
-                        {text}
-                    </Typography>
+                <Box component="a" href={link} passHref target='_black' >
+                    <Box className="flex gap-2 w-full cursor-pointer" >
+                        {icon}
+                        <Typography fontFamily="Questrial" className="text-[17px] text-white" >
+                            {text}
+                        </Typography>
 
+                    </Box>
                 </Box>
             )
                 : (
@@ -92,11 +94,14 @@ const Footer = ({ footer }) => {
             }}
             />
             <Heading title="Social Media" />
-            <Listing text="Youtube" link="youtu.be/UuY-_kH2uqc" icon={
+            <Listing text="Youtube" link="https://youtu.be/PBwXNXODj1o" icon={
                 <YouTube className="text-white" />
             } />
-            <Listing text="Instagram" link="https://www.instagram.com/Sportsview_skaters/" icon={
+            <Listing text="Instagram" link="https://instagram.com/sportsview_skaters?igshid=ZGUzMzM3NWJiOQ==" icon={
                 <Instagram className="text-white" />
+            } />
+            <Listing text="Instagram" link="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPBwXNXODj1o%26t%3D35s%26ab_channel%3DSportsviewSkaters%26fbclid%3DIwAR2IfHby9xwCnrLZGfZRz4HwKUv_x_dVnuGDFl410sNo-lxBIvfm8NT8Lgo&h=AT00eP4Z3a-oQhzFnPZFAOWhdN_X9-08Fw7mMCAaVSYieUfWWMGy4ShHI-cNy2Hk-rL9oETrBMYrozMEdf7fN5RwI_iaOR6v7Gz31ZE8zyQ09Q65J5BVdl1E3tG5LkP9q6H3zg " icon={
+                <FacebookIcon className="text-white" />
             } />
 
         </Grid>

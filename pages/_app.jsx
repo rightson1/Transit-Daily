@@ -15,6 +15,15 @@ import Navbar from "../components/Navbar";
 
 import Footer from "../components/Footer"
 import "swiper/swiper-bundle.css";
+import dynamic from "next/dynamic";
+import "../styles/nprogress.css";
+const TopProgressBar = dynamic(
+  () => {
+    return import("../components/TopProgress");
+  },
+  { ssr: false },
+);
+
 function MyApp(props) {
 
   const clientSideEmotionCache = createEmotionCache();
@@ -37,7 +46,7 @@ function MyApp(props) {
       </Head>
       <CacheProvider value={emotionCache}>
 
-
+        <TopProgressBar />
         <AnimatePresence>
           {Component.nolayout ? (<ThemeProvider>
             <div className="w-[100vw] overflow-x-hidden">

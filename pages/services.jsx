@@ -6,12 +6,12 @@ import Slide from "../components/Slide";
 import { client } from "../utils/client"
 import Title from "../components/Title";
 
-const Services = ({ services }) => {
-
+const Services = ({ services, info }) => {
+    const { fields: { title, paragraph } } = info
     const { colors } = useGlobalProvider();
     return <div className="min-h-screen ">
-        <Title title="SERVICES || SPORTS VIEW TALENTS"
-            description="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control." />
+        <Title title={title} description={paragraph} />
+
         <Slide {...{ services }} />
 
 
@@ -46,11 +46,15 @@ const Services = ({ services }) => {
 export const getStaticProps = async () => {
     const response = await client.getEntries({ content_type: 'services' });
 
+    const info = await client.getEntries({ content_type: 'servicePage' });
+
 
     return {
         props: {
             services: response?.items || [],
+            info: info?.items[0] || [],
             revalidate: 60
+
         }
         , revalidate: 60
     }
