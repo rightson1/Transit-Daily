@@ -13,7 +13,7 @@ export default function Home({ services, content }) {
 
   const font = {
     xs: '2rem',
-    md: '5.5rem'
+    md: '4.5rem'
 
   }
   // SPORTS VIEW TALENTS

@@ -52,7 +52,8 @@ const Footer = ({ footer }) => {
         }}
     >
         <Grid item xs={12} md={4} className="flex flex-col ">
-            <img src="/logo.png" alt="" className="w-[150px]" />
+            {/* <img src="/logo.png" alt="" className="w-[100px] h-[100px]" /> */}
+            <Heading title="SPORTS VIEW TALENTS" />
             <Typography fontFamily="Questrial" className="text-[17px] text-white" >
                 You wanna learn skating and chess,dont know
                 where to star? Sportsview talent offers the best chess and skating training in Kenya ,join us now!

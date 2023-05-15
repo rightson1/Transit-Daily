@@ -79,7 +79,7 @@ const Slide = ({ services, agreement }) => {
                                                     }
                                                 }}
                                             >
-                                                Book Now
+                                                Register
                                             </Button>
                                         </div>
 

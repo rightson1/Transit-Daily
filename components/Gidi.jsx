@@ -5,8 +5,8 @@ import { useGlobalProvider } from "../utils/themeContext";
 
 const Gidi = ({ title2, title3, paragraph3, paragraph2 }) => {
     const { colors } = useGlobalProvider()
-    return <Box className="flex flex-col md:flex-row min-h-[70vh] px-10  gap-5 my-20">
-        <Box className="flex items-center gap-4  flex-col">
+    return <Box className="flex flex-col md:flex-row px-10  gap-5 my-20">
+        <Box className="flex items-center gap-4  flex-col flex-1">
             <Typography variant="h3" color={colors.yellow[500]} className="font-[700] text-center" fontFamily="Questrial"
             >  {title2}
             </Typography>
@@ -16,7 +16,7 @@ const Gidi = ({ title2, title3, paragraph3, paragraph2 }) => {
             </Typography>
 
         </Box>
-        <Box className="flex items-center gap-4  flex-col">
+        <Box className="flex items-center gap-4  flex-col flex-1">
             <Typography variant="h3" color={colors.yellow[500]} className="font-[700] text-center" fontFamily="Questrial"
             >   {title3}
             </Typography>

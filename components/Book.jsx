@@ -150,7 +150,7 @@ const BookForm = ({ bikes }) => {
                 </Grid> */}
             </Grid>
 
-            <Button type="submit" className="shadow-lg hover:bg-slate-200" sx={{ backgroundColor: colors.teal[500], color: colors.grey[800], mt: 5, px: 5, py: 1, fontSize: 20, fontWeight: 700, fontFamily: "Questrial" }}>Book Now
+            <Button type="submit" className="shadow-lg hover:bg-slate-200" sx={{ backgroundColor: colors.teal[500], color: colors.grey[800], mt: 5, px: 5, py: 1, fontSize: 20, fontWeight: 700, fontFamily: "Questrial" }}>REGISTER Now
 
             </Button>
 
