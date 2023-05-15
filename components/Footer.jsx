@@ -11,6 +11,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { client } from "../utils/client";
 import Link from 'next/link';
+import YouTube from '@mui/icons-material/YouTube';
+import Instagram from '@mui/icons-material/Instagram';
 const Footer = ({ footer }) => {
 
     const { colors } = useGlobalProvider()
@@ -62,13 +64,12 @@ const Footer = ({ footer }) => {
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
             <Heading title="GMAIL & MAPS" />
-            <Listing text="JQ5M + 52R, Ole Kasasi Rd,
- Ongata Rongai" icon={
-                    <LocationOnIcon className="text-white" />
-                } />
+            <Listing text="Sportsview Hotel Kasarani (Click To View)" icon={
+                <LocationOnIcon className="text-white" />
+            } link="https://goo.gl/maps/txa9DLNwuviwQchi7" />
             <Listing text="sportsviewtalentacademy@gmail.com" icon={
                 <EmailIcon className="text-white" />
-            } />
+            } link="mailto:sportsviewtalentacademy@gmail.com" />
             <Divider sx={{
                 borderBottom: `1px solid ${colors.teal[100]}`
             }}
@@ -91,11 +92,11 @@ const Footer = ({ footer }) => {
             }}
             />
             <Heading title="Social Media" />
-            <Listing text="Facebook" link="https://www.facebook.com/transitdaily254/" icon={
-                <FacebookIcon className="text-white" />
+            <Listing text="Youtube" link="youtu.be/UuY-_kH2uqc" icon={
+                <YouTube className="text-white" />
             } />
-            <Listing text="Map" link="https://www.google.com/maps/place/Transit+Daily/@-1.3920625,36.7803738,17z/data=!4m16!1m7!3m6!1s0x182f0f02a2bd9467:0x69d6a1873c9730b3!2sTransit+Daily!8m2!3d-1.3920625!4d36.7825625!16s%2Fg%2F11tm_7zw_h!3m7!1s0x182f0f02a2bd9467:0x69d6a1873c9730b3!8m2!3d-1.3920625!4d36.7825625!9m1!1b1!16s%2Fg%2F11tm_7zw_h" icon={
-                <LocationOnIcon className="text-white" />
+            <Listing text="Instagram" link="https://www.instagram.com/Sportsview_skaters/" icon={
+                <Instagram className="text-white" />
             } />
 
         </Grid>
