@@ -12,7 +12,7 @@ export default function Home({ services, content }) {
   const { autoType, title1, title2, title3, paragraph1, paragraph2, paragraph3, slideShow } = content[0]?.fields;
 
   const font = {
-    xs: '3.5rem',
+    xs: '2rem',
     md: '5.5rem'
 
   }
@@ -33,13 +33,13 @@ export default function Home({ services, content }) {
               <Typography component="span" className="font-[900]"
                 fontSize={font} sx={{
                   color: colors.teal[500]
-                }}>TS</Typography>
+                }}>TSVIEW </Typography>
             </div>
             <Typography component="span" className="font-[900]"
               fontSize={font}
               sx={{
                 color: colors.black[100]
-              }}> VIEW </Typography>
+              }}> TALENT </Typography>
 
 
           </Typography>

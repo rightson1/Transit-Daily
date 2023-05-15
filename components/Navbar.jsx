@@ -99,7 +99,7 @@ function Navbar() {
 
                             }}
                         >
-                            <img src="/logo.png" className='w-[70px] ' alt="Transit Daily Logo" />
+                            <img src="/logo.png" className='w-[50px] max-h-[50px]' alt="Transit Daily Logo" />
                         </Box>
 
                         <div className="flex gap-3 items-center color-black ">
