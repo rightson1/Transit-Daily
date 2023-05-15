@@ -25,10 +25,9 @@ const BookForm = ({ bikes }) => {
         e.preventDefault();
         const data = new FormData(e.target);
         const obj = Object.fromEntries(data.entries());
-        const bikes = bikeNames.join(",");
+        // const bikes = bikeNames.join(",");
         const body = {
-            ...obj,
-            bikes
+            ...obj
         }
         const entry = management.then((env) => {
             return env.createEntry("bookForm", {
@@ -42,21 +41,21 @@ const BookForm = ({ bikes }) => {
                     phone: {
                         "en-US": body.phone
                     },
-                    bikes: {
-                        "en-US": body.bikes
-                    },
-                    startDate: {
-                        "en-US": body.startDate
-                    },
-                    endDate: {
-                        "en-US": body.endDate
-                    },
+                    // bikes: {
+                    //     "en-US": body.bikes
+                    // },
+                    // startDate: {
+                    //     "en-US": body.startDate
+                    // },
+                    // endDate: {
+                    //     "en-US": body.endDate
+                    // },
                     message: {
                         "en-US": body.message
                     },
-                    bikes: {
-                        "en-US": bikeNames.join(",")
-                    }
+                    // bikes: {
+                    //     "en-US": bikeNames.join(",")
+                    // }
                 }
             }
             )
@@ -86,7 +85,7 @@ const BookForm = ({ bikes }) => {
 
             </div>
             <Grid container spacing={5} className="" >
-                <Grid item xs={12} md={6} className="flex flex-col items-start gap-3">
+                {/* <Grid item xs={12} md={6} className="flex flex-col items-start gap-3">
                     <Typography fontFamily="Questrial" className="text-[17px]" textAlign="center">
                         Start Date
                     </Typography>
@@ -97,7 +96,7 @@ const BookForm = ({ bikes }) => {
                         End Date
                     </Typography>
                     <TextField type="date" fullWidth name="endDate" />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} md={6} className="flex flex-col items-start gap-3">
                     <Typography fontFamily="Questrial" className="text-[17px]" textAlign="center">
                         Name
@@ -123,7 +122,7 @@ const BookForm = ({ bikes }) => {
                     </Typography>
                     <TextField type="text" name="message" fullWidth label="Any additional infomation" />
                 </Grid>
-                <Grid item xs={12} md={6} className="flex flex-col items-start gap-3"  >
+                {/* <Grid item xs={12} md={6} className="flex flex-col items-start gap-3"  >
                     <Typography fontFamily="Questrial" className="text-[17px]" textAlign="center">
                         Bikes
                     </Typography>
@@ -148,7 +147,7 @@ const BookForm = ({ bikes }) => {
                         ))}
                     </Select>
 
-                </Grid>
+                </Grid> */}
             </Grid>
 
             <Button type="submit" className="shadow-lg hover:bg-slate-200" sx={{ backgroundColor: colors.teal[500], color: colors.grey[800], mt: 5, px: 5, py: 1, fontSize: 20, fontWeight: 700, fontFamily: "Questrial" }}>Book Now

@@ -18,8 +18,8 @@ export default function Home({ content }) {
     }
     return (<div className="relative flex flex-col  w-screen overflow-x-hidden">
         <div className="flex  w-full h-[60vh] md:h-[70vh]   z-[1] ">
-            <Title title=" Transit Daily | Bicycle Repair, Renting and Cycling Events in Nairobi and Kajiado, Kenya"
-                description="Learn more about Transit Daily, a Nairobi-based startup offering affordable bicycle repair, renting and cycling events. Discover how we are making cycling accessible and enjoyable for everyone" />
+            <Title title=" SPORTS VIEW TALENTS"
+                description="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control." />
 
             <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
                 <div className="flex justify-center items-center">
@@ -28,17 +28,17 @@ export default function Home({ content }) {
                         <div className="flex px-5">
                             <Typography component="span" className="font-[900]" fontSize={font} sx={{
                                 color: colors.yellow[500]
-                            }}>Kipye</Typography>
+                            }}>Abo</Typography>
                             <Typography component="span" className="font-[900]"
                                 fontSize={font} sx={{
                                     color: colors.teal[500]
-                                }}>gon</Typography>
+                                }}>ut</Typography>
                         </div>
                         <Typography component="span" className="font-[900]"
                             fontSize={font}
                             sx={{
                                 color: colors.black[100]
-                            }}> Koech </Typography>
+                            }}> Us </Typography>
 
 
                     </Typography>

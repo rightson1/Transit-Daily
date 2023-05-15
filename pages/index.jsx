@@ -16,10 +16,11 @@ export default function Home({ services, content }) {
     md: '5.5rem'
 
   }
+  // SPORTS VIEW TALENTS
   return (<div className="relative">
     <div className="flex  w-full h-[60vh] md:h-[80vh]  z-[1]">
-      <Title title="Affordable Bicycle Services and Cycling Events in Nairobi | Transit Daily"
-        description="Transit Daily offers affordable bicycle repair, rental, and cycling events in Nairobi, Kenya. Join us for a fun and eco-friendly way to explore the city on two wheels. Contact us today to learn more!" />
+      <Title title="SPORTS VIEW TALENTS"
+        description="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control." />
 
       <div className="flex flex-col justify-center items-center z-[6] h-full px-5 w-full gap-8">
         <div className="flex justify-center items-center">
@@ -28,17 +29,17 @@ export default function Home({ services, content }) {
             <div className="flex">
               <Typography component="span" className="font-[900]" fontSize={font} sx={{
                 color: colors.yellow[500]
-              }}>Trans</Typography>
+              }}>SPOR</Typography>
               <Typography component="span" className="font-[900]"
                 fontSize={font} sx={{
                   color: colors.teal[500]
-                }}>it</Typography>
+                }}>TS</Typography>
             </div>
             <Typography component="span" className="font-[900]"
               fontSize={font}
               sx={{
                 color: colors.black[100]
-              }}>  Daily </Typography>
+              }}> VIEW </Typography>
 
 
           </Typography>

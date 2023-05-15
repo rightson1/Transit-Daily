@@ -22,7 +22,7 @@ const Book = ({ services, rates, bikes, agreement }) => {
 
     return <div className="">
         <Slide {...{ services, agreement }} />
-        <Title title=" Bike Rental in Nairobi and Kajiado | Affordable Bicycle Rental - Transit Daily"
+        {/* <Title title=" Bike Rental in Nairobi and Kajiado | Affordable Bicycle Rental - Transit Daily"
             description="Book a bike in Nairobi or Kajiado with Transit Daily. We offer affordable bike rentals at an affordable price. Choose from a wide range of bicycles for your adventure."
         />
         <Typography my={5} variant="h2" color={colors.grey[500]} className="font-[700] opacity-70 text-center" fontFamily="Questrial"
@@ -73,7 +73,7 @@ const Book = ({ services, rates, bikes, agreement }) => {
 
             </Grid>
 
-        </div>
+        </div> */}
         <BookForm {...{ bikes: bikeNames }} />
     </div>;
 };

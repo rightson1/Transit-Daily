@@ -23,7 +23,7 @@ const nav = [{
     link: '/services'
 
 }, {
-    name: 'Book',
+    name: 'Register',
     link: '/book'
 },
 

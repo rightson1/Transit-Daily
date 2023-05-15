@@ -6,13 +6,14 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography"
 
 const Slide = ({ services, agreement }) => {
-
+    console.log(services)
     return <Box
         sx={{
             "& .swiper-pagination-bullet": {
                 backgroundColor: "white !important"
             }
-        }}>   <Swiper
+        }}>
+        <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
             autoplay={{
                 delay: 3000,
@@ -50,7 +51,7 @@ const Slide = ({ services, agreement }) => {
                                                 className="w-[150px] "
                                                 component="a"
                                                 target="_blank"
-                                                href={agreement[0]?.fields?.document.fields.file.url}
+                                                href={fields?.profilePdf.fields.file.url}
 
                                                 sx={{
                                                     border: "1px solid white",
@@ -102,7 +103,8 @@ const Slide = ({ services, agreement }) => {
 
                 )
             }
-        </Swiper></Box>;
+        </Swiper>
+    </Box>;
 };
 
 export default Slide;

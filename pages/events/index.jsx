@@ -32,10 +32,10 @@ const Event = ({ events }) => {
     const endIndex = startIndex + eventsPerPage;
     const displayedEvents = events?.slice(startIndex, endIndex);
     return <div className="min-h-screen ">
-        <Title
+        {/* <Title
             title="Transit Daily Events | Cycling and Hiking Events in Nairobi and Kajiado"
             description="Join Transit Daily for exciting cycling and hiking events in Nairobi and Kajiado. Stay active and explore the beautiful landscapes of Kenya with our fun and affordable events. Check out our upcoming events and book your spot now."
-        />
+        /> */}
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{
             backgroundImage: `url('/trek/1.png')`,
             backgroundSize: 'cover',

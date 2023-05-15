@@ -97,7 +97,7 @@ const listItems = [
         link: '/services'
 
     }, {
-        name: 'Book Bike',
+        name: 'Register',
         link: '/book'
     },
 

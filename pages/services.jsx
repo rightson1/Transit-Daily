@@ -10,8 +10,8 @@ const Services = ({ services }) => {
 
     const { colors } = useGlobalProvider();
     return <div className="min-h-screen ">
-        <Title title="Transit Daily | Bicycle Repair, Rental and Cycling Events in Nairobi and Kajiado"
-            description="Transit Daily is your go-to source for affordable bicycle repair, rental, and cycling events in Nairobi and Kajiado. Experience the beauty of Kenya on two wheels with our expert team." />
+        <Title title="SERVICES || SPORTS VIEW TALENTS"
+            description="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control." />
         <Slide {...{ services }} />
 
 

@@ -54,17 +54,18 @@ const Footer = ({ footer }) => {
         <Grid item xs={12} md={4} className="flex flex-col ">
             <img src="/logo.png" alt="" className="w-[150px]" />
             <Typography fontFamily="Questrial" className="text-[17px] text-white" >
-                Transit Daily offers affordable bicycle repair, renting, and cycling events in Nairobi and Kajiado. Join us for a fun and active experience!
+                You wanna learn skating and chess,dont know
+                where to star? Sportsview talent offers the best chess and skating training in Kenya ,join us now!
             </Typography>
 
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
-            <Heading title="Rongai Office" />
+            <Heading title="GMAIL & MAPS" />
             <Listing text="JQ5M + 52R, Ole Kasasi Rd,
  Ongata Rongai" icon={
                     <LocationOnIcon className="text-white" />
                 } />
-            <Listing text="kipyegonkoech123@gmail.com" icon={
+            <Listing text="sportsviewtalentacademy@gmail.com" icon={
                 <EmailIcon className="text-white" />
             } />
             <Divider sx={{
@@ -76,12 +77,12 @@ const Footer = ({ footer }) => {
         </Grid>
         <Grid item xs={12} md={4} className="flex flex-col gap-4" >
             <Heading title="Our Contacts" />
-            <Listing text="0711775802 (Line One Koech)" icon={
+            {/* <Listing text="0721299828" icon={
                 <LocalPhoneIcon className="text-white" />
-            } />
+            } /> */}
 
 
-            <Listing text="0102526386 (Line 2 Koech)" icon={
+            <Listing text="0721299828 ( Line 1 ) " icon={
                 <LocalPhoneIcon className="text-white" />
             } />
             <Divider sx={{

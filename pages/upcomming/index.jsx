@@ -15,8 +15,8 @@ const Event = ({ events }) => {
 
     return <div className="min-h-screen ">
         <Title
-            title="Transit Daily | Upcoming Cycling and Hiking Events in Nairobi and Beyond"
-            description="Stay up-to-date with the latest cycling and hiking events organized by Transit Daily in Nairobi and surrounding areas, including Kajiado and Naivasha. Join us for a fun-filled day of outdoor activities and adventure. Book your spot now!"
+            title="Upcomming Events | SPORTS VIEW TALENTS "
+            description="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control. Book your spot now!"
         />
 
         <Box className="flex justify-center items-center h-[30vh] flex-col" sx={{

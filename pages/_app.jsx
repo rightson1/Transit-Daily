@@ -23,10 +23,10 @@ function MyApp(props) {
   return (
     <>
       <Head>
-        <title>Transit Daily - Bicycle Repair, Renting, and Cycling Events in Nairobi, Kenya</title>
-        <meta name="description" content="Transit Daily offers affordable bicycle repair, renting, and cycling events in Nairobi and Kajiado. Join us for a fun and active experience!" />
-        <meta name="keywords" content="Transit Daily, bicycle, repair, renting, cycling, events, Nairobi, Kenya, affordable" />
-        <meta name="author" content="Transit Daily" />
+        <title>SPORTS VIEW TALENTS</title>
+        <meta name="description" content="Sportsview Talents Academy formerly Sportsview Skaters Club (SVS) was formed in February 2019 as an in-line skating training program. Now entering our third year, SVS has evolved into a full-scale, roller skating, bike riding , floor ball and a very successful Chess club offering year-round tailored trainings to kids from the age of 3 . We record most of our training activities and upload them on YouTube and Facebook pages to enhance quality control." />
+        {/* <meta name="keywords" content="Transit Daily, bicycle, repair, renting, cycling, events, Nairobi, Kenya, affordable" /> */}
+        <meta name="author" content="Eli Jesse" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* <meta property="og:url" content="https://transit-daily.vercel.app/logo.png" /> */}
         <meta property="og:image" content=" https://transit-daily.vercel.app/logo.png" />
